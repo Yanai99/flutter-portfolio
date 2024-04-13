@@ -18,6 +18,7 @@ class MainDesktop extends StatelessWidget {
                 child:Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  //intro message
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -26,15 +27,18 @@ class MainDesktop extends StatelessWidget {
                               height: 1.5,
                               fontWeight: FontWeight.bold,color: CustomColor.whitePrimary) ,),
                         const SizedBox(height: 20,),
+                        //contact btn
                         SizedBox(
                           width: 250,
-                          child: ElevatedButton(onPressed: (){}, child: const Text("Get in touch"),)
+                          child: ElevatedButton(onPressed: (){}, 
+                          child: const Text("Get in touch"),)
                           )
                     ],
                   ),
+                  //avatar img
                   Image.asset(
-                    "assets/profile_pic.jpeg",
-                    width:screenWidth/4,)
+                    "assets/profile_pic.png",
+                    width:screenWidth/3,)
                   ],
                   ),
                   );

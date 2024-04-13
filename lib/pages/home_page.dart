@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/nav_items.dart';
+import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 
 import '../constants/size.dart';
@@ -25,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
 
     return LayoutBuilder(
       builder: (context,constraints) {
@@ -46,8 +50,9 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
 
-              const MainDesktop(),
-                
+              if (constraints.maxWidth >= kMinDesktopWidth) 
+                const MainDesktop() else const MainMobile(),
+
                // Skills
               Container(
                 height: 500,
