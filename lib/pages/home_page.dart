@@ -8,6 +8,7 @@ import 'package:flutter_application_1/constants/nav_items.dart';
 import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/utils/project_utils.dart';
 import 'package:flutter_application_1/widgets/contacts_section.dart';
+import 'package:flutter_application_1/widgets/footer.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 import 'package:flutter_application_1/widgets/skill_mobile.dart';
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-/*               // Main
+              // Main
               if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() 
               else
@@ -95,15 +96,12 @@ class _HomePageState extends State<HomePage> {
                // Projects
               const ProjectSection(),
 
-              const SizedBox(height: 30,), */
+              const SizedBox(height: 30,),
               // Contacts
-              ContactsSection(),
+              const ContactsSection(),
 
               // Footer
-              Container(
-                height: 500,
-                width: double.maxFinite,
-              ),
+              Footer(),
             ],
           ));
     });
