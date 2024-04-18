@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/nav_items.dart';
 import 'package:flutter_application_1/constants/skill_items.dart';
+import 'package:flutter_application_1/utils/project_utils.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 import 'package:flutter_application_1/widgets/skill_mobile.dart';
@@ -17,6 +18,7 @@ import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 import '../widgets/main_desktop.dart';
 import '../constants/skill_items.dart';
+import '../widgets/project_card.dart';
 import '../widgets/skill_desktop.dart';
 
 
@@ -87,15 +89,33 @@ class _HomePageState extends State<HomePage> {
 
                // Projects
               Container(
-                height: 500,
-                width: double.maxFinite,
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                child: Column(
+                    children: [
+                      // Work Projects title
+                      const Text(
+                        "Work Projects",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary,
+                        ),
+                      ),
+
+                      // Work Projects cards
+                      ProjectCardWidget(project: hobbyProjectUtils.first,)
+                    ],)
               ),
+
                // Contacts
               Container(
                 height: 500,
                 width: double.maxFinite,
                 color: Colors.blueGrey,
               ),
+
               // Footer
               Container(
                 height: 500,
@@ -107,3 +127,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
