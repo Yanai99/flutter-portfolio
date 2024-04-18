@@ -7,20 +7,22 @@ import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/nav_items.dart';
 import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/utils/project_utils.dart';
+import 'package:flutter_application_1/widgets/contacts_section.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 import 'package:flutter_application_1/widgets/skill_mobile.dart';
 
 import '../constants/size.dart';
 import '../styles/style.dart';
+import '../widgets/custom_text_field.dart';
 import '../widgets/drawer_mobile.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 import '../widgets/main_desktop.dart';
 import '../constants/skill_items.dart';
 import '../widgets/project_card.dart';
+import '../widgets/projects_section.dart';
 import '../widgets/skill_desktop.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,16 +39,17 @@ class _HomePageState extends State<HomePage> {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
 
-    return LayoutBuilder(
-      builder: (context,constraints) {
-        return Scaffold(
-          key:scaffoldKey,
+    return LayoutBuilder(builder: (context, constraints) {
+      return Scaffold(
+          key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null:const DrawerMobile(),
-          body:ListView(
+          endDrawer: constraints.maxWidth >= kMinDesktopWidth
+              ? null
+              : const DrawerMobile(),
+          body: ListView(
             scrollDirection: Axis.vertical,
-            children:[
-              // Main
+            children: [
+/*               // Main
               if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() 
               else
@@ -59,7 +62,8 @@ class _HomePageState extends State<HomePage> {
 
               if (constraints.maxWidth >= kMinDesktopWidth) 
                 const MainDesktop() else const MainMobile(),
-
+              
+              
                // Skills
               Container(
                 width: screenWidth,
@@ -87,44 +91,21 @@ class _HomePageState extends State<HomePage> {
                 )
               ),
 
+              const SizedBox(height: 30,),
                // Projects
-              Container(
-                width: screenWidth,
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              const ProjectSection(),
 
-                child: Column(
-                    children: [
-                      // Work Projects title
-                      const Text(
-                        "Work Projects",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: CustomColor.whitePrimary,
-                        ),
-                      ),
-
-                      // Work Projects cards
-                      ProjectCardWidget(project: hobbyProjectUtils.first,)
-                    ],)
-              ),
-
-               // Contacts
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              const SizedBox(height: 30,), */
+              // Contacts
+              ContactsSection(),
 
               // Footer
               Container(
                 height: 500,
                 width: double.maxFinite,
               ),
-            ] ,)
-        );
-      }
-    );
+            ],
+          ));
+    });
   }
 }
-

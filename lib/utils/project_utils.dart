@@ -32,6 +32,8 @@ List<ProjectUtils> hobbyProjectUtils = [
         'This is a dictionary application for English learners to easily look up word definitions.',
     githubLink:
         'https://play.google.com/store/apps/details?id=com.shohatech.eduza_eng_dictionary',
+    webLink: 
+        'https://yanai99.github.io/Yanai-Gallery-V1/',
   ),
   ProjectUtils(
       image: 'assets/projects/03.png',
