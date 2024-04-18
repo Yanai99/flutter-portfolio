@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/nav_items.dart';
+import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 
@@ -13,6 +15,8 @@ import '../widgets/drawer_mobile.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 import '../widgets/main_desktop.dart';
+import '../constants/skill_items.dart';
+import '../widgets/skill_desktop.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -55,10 +59,26 @@ class _HomePageState extends State<HomePage> {
 
                // Skills
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //title
+                    const Text("What I can do", style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
+                    ),),
+
+                    const SizedBox(height: 50,),
+                    //platform and sklils
+                    const SkillsDesktop()
+                  ],
+                )
               ),
+
                // Projects
               Container(
                 height: 500,
