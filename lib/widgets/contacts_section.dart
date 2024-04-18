@@ -52,7 +52,7 @@ class ContactsSection extends StatelessWidget {
             ),
             child: CustomTextField(
               hintText: "Your message",
-              maxLines: 20,
+              maxLines: 15,
             ),
           ),
           const SizedBox(
