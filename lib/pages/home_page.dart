@@ -8,6 +8,7 @@ import 'package:flutter_application_1/constants/nav_items.dart';
 import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
+import 'package:flutter_application_1/widgets/skill_mobile.dart';
 
 import '../constants/size.dart';
 import '../styles/style.dart';
@@ -73,8 +74,13 @@ class _HomePageState extends State<HomePage> {
                     ),),
 
                     const SizedBox(height: 50,),
+
                     //platform and sklils
-                    const SkillsDesktop()
+                    if(constraints.maxWidth>=kMedDesktopWidth)
+                      const SkillsDesktop() 
+                    else
+                     const SkillsMobile()
+
                   ],
                 )
               ),
