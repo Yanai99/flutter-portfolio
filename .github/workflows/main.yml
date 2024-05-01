@@ -11,8 +11,8 @@ jobs:
       # Install Flutter command with a specific version
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.0'  # Specify a compatible Flutter version
-          channel: 'stable'
+          flutter-version: '3.13.0'  # Specify a compatible Flutter version
+          channel: 'stable'          # Use the stable channel
 
       # Build Website
       - name: Build Website
