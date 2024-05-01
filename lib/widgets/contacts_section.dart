@@ -12,9 +12,11 @@ class ContactsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       color: CustomColor.bgLight1,
+      width: screenWidth,
       child: Column(
         children: [
           //title
@@ -34,52 +36,7 @@ class ContactsSection extends StatelessWidget {
                maxWidth: 700,
                maxHeight: 100,
              ),),
-          //   child: LayoutBuilder(builder:(context,constraints){
-          //     if(constraints.maxWidth >= kMinDesktopWidth){
-          //         return buildNameEmailFieldDesktop();
-          //     }
-          //     else
-          //         return buildNameEmailFieldMobile();
-          //   },),
-          // ),
-          // // message field
-          // const SizedBox(
-          //   height: 15,
-          // ),
-          // ConstrainedBox(
-          //   constraints: const BoxConstraints(
-          //     maxWidth: 700,
-          //   ),
-          //   child: CustomTextField(
-          //     hintText: "Your message",
-          //     maxLines: 15,
-          //   ),
-          // ),
-          // const SizedBox(
-          //   height: 20,
-          // ),
-          // // send button
-          // ConstrainedBox(
-          //   constraints: const BoxConstraints(
-          //     maxWidth: 700,
-          //   ),
-          //   child: SizedBox(
-          //       width: double.maxFinite,
-          //       child: ElevatedButton(
-          //           onPressed: () {}, child: Text("Get in touch"))),
-          // ),
 
-          // const SizedBox(
-          //   height: 30,
-          // ),
-          // ConstrainedBox(
-          //     constraints: const BoxConstraints(
-          //       maxWidth: 300,
-          //     ),
-          //     child: const Divider()),
-          // const SizedBox(
-          //   height: 15,
-          // ),
           // SNS icon button links
 
           // TODO:
@@ -124,48 +81,4 @@ class ContactsSection extends StatelessWidget {
       ),
     );
   }
-
-//   Row buildNameEmailFieldDesktop(){
-//     return Row(
-//               children: [
-//                 // name
-//                 Flexible(
-//                   child: CustomTextField(
-//                     hintText: "Your name",
-//                   ),
-//                 ),
-//                 // email
-//                 const SizedBox(
-//                   width: 15,
-//                 ),
-//                 Flexible(
-//                   child: CustomTextField(
-//                     hintText: "Your email",
-//                   ),
-//                 ),
-//               ],
-//             );
-//   }
-
-// Column buildNameEmailFieldMobile(){
-//     return Column(
-//               children: [
-//                 // name
-//                 Flexible(
-//                   child: CustomTextField(
-//                     hintText: "Your name",
-//                   ),
-//                 ),
-//                 // email
-//                 const SizedBox(
-//                   height: 15,
-//                 ),
-//                 Flexible(
-//                   child: CustomTextField(
-//                     hintText: "Your email",
-//                   ),
-//                 ),
-//               ],
-//             );
-//   }
  }
