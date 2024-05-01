@@ -1,31 +1,37 @@
 name: Build and Release APK
 on: push
 jobs:
-    hosting:
-      name: Deploy Website
-      runs-on: ubuntu-latest
-      steps:
-        # Checkout Repository
-        - uses: actions/checkout@v3
+  hosting:
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    steps:
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-        # Install Flutter command
-        - uses: subosito/flutter-action@v2.8.0
-          with:
-            channel: 'dev'
+      # Checkout Repository
+      - uses: actions/checkout@v3
 
-        # Build Website
-        - name: Build Website
-          run: |
-            flutter config --enable-web
-            flutter pub get
-            flutter build web --release
-          working-directory: ./
+      # Install Flutter command
+      - uses: subosito/flutter-action@v2.8.0
+        with:
+          channel: 'dev'
 
-        # Deploy Firebase Hosting
-        - name: Deploy Firebase Hosting
-          uses: w9jds/firebase-action@master
-          with:
-            args: deploy --only hosting:flutter-portfolio-a34b6
-          env:
-            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-            PROJECT_PATH: ./
+      # Build Website
+      - name: Build Website
+        run: |
+          flutter config --enable-web
+          flutter pub get
+          flutter build web --release
+        working-directory: ./
+
+      # Deploy Firebase Hosting
+      - name: Deploy Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:flutter-portfolio-a34b6
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: ./
