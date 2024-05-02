@@ -53,7 +53,7 @@ class ContactsSection extends StatelessWidget {
                   js.context.callMethod('open',[SnsLinks.github]);
                 },
                 child: Image.asset(
-                  "github.png",
+                  "assets/github.png",
                   width: 28,
                 ),
               ),
@@ -62,16 +62,19 @@ class ContactsSection extends StatelessWidget {
                    js.context.callMethod('open', [SnsLinks.linkedIn]);
                 },
                 child: Image.asset(
-                  "linkedin.png",
+                  "assets/linkedin.png",
                   width: 28,
                 ),
               ),
-             
-               Image.asset(
-                  "telegram.png",
+              InkWell(
+                onTap: () {
+                   js.context.callMethod('open', [SnsLinks.telegram]);
+                },
+                child: Image.asset(
+                  "assets/telegram.png",
                   width: 28,
                 ),
-              
+              ),
             ],
           ),
         ],
