@@ -18,6 +18,12 @@ jobs:
           flutter-version: '3.19.6'  # Specify a compatible Flutter version
           channel: 'stable'          # Use the stable channel
 
+      # Set up Firebase authentication
+      - name: Authenticate with Firebase
+        run: echo $FIREBASE_SERVICE_ACCOUNT > ${HOME}/firebase-key.json
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
       # Build Website
       - name: Build Website
         run: |
@@ -28,6 +34,4 @@ jobs:
 
       # Deploy Firebase Hosting to Preview Channel
       - name: Deploy Firebase Hosting
-        run: firebase hosting:channel:deploy preview --only hosting:flutter-portfolio-a34b6
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: firebase deploy --only hosting --token "$(cat ${HOME}/firebase-key.json)"
