@@ -66,15 +66,12 @@ class ContactsSection extends StatelessWidget {
                   width: 28,
                 ),
               ),
-              InkWell(
-                onTap: () {
-                   js.context.callMethod('open', [SnsLinks.telegram]);
-                },
-                child: Image.asset(
+             
+               Image.asset(
                   "telegram.png",
                   width: 28,
                 ),
-              ),
+              
             ],
           ),
         ],
