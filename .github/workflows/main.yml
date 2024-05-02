@@ -1,37 +1,31 @@
 name: Build and Release APK
 on: push
 jobs:
-  hosting:
-    name: Deploy Website
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout Repository
-      - uses: actions/checkout@v3
+    hosting:
+      name: Deploy Website
+      runs-on: ubuntu-latest
+      steps:
+        # Checkout Repository
+        - uses: actions/checkout@v3
 
-      # Install Firebase CLI
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+        # Install Flutter command
+        - uses: subosito/flutter-action@v2.8.0
+          with:
+            channel: 'dev'
 
-      # Install Flutter command with a specific version
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.19.6'  # Specify a compatible Flutter version
-          channel: 'stable'          # Use the stable channel
+        # Build Website
+        - name: Build Website
+          run: |
+            flutter config --enable-web
+            flutter pub get
+            flutter build web --release
+          working-directory: ./
 
-      # Set up Firebase authentication
-      - name: Authenticate with Firebase
-        run: echo $FIREBASE_SERVICE_ACCOUNT > ${HOME}/firebase-key.json
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-
-      # Build Website
-      - name: Build Website
-        run: |
-          flutter config --enable-web
-          flutter pub get
-          flutter build web --release
-        working-directory: ./
-
-      # Deploy Firebase Hosting to Preview Channel
-      - name: Deploy Firebase Hosting
-        run: firebase deploy --only hosting --token "$(cat ${HOME}/firebase-key.json)"
+        # Deploy Firebase Hosting
+        - name: Deploy Firebase Hosting
+          uses: w9jds/firebase-action@master
+          with:
+            args: deploy --only hosting:flutter-portfolio-a34b6
+          env:
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+            PROJECT_PATH: ./
