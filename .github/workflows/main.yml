@@ -24,9 +24,8 @@ jobs:
 
       # Deploy Firebase Hosting
       - name: Deploy Firebase Hosting
-        uses: w9jds/firebase-action@master
+        uses: FirebaseExtended/action-hosting-deploy@v0  # Using the official Firebase action
         with:
-          args: deploy --only hosting:flutter-portfolio-a34b6
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_PATH: ./
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'      # GitHub token for authentication
+          firebaseServiceAccount: '${{ secrets.FIREBASE_TOKEN }}'
+          projectId: 'flutter-portfolio-a34b6'           # Replace with your Firebase project ID
