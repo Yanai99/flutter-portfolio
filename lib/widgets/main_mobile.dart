@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/welcom_message.dart';
 
 import '../constants/colors.dart';
 
@@ -37,7 +38,7 @@ class MainMobile extends StatelessWidget {
                       const SizedBox(height: 30,),
                     //intro text
                     const Text(
-                      "Hi,\nI'm Yanai Faran\nAn aspiring SW",
+                      welcomeMessage,
                       style: TextStyle(
                           fontSize: 24,
                           height: 1.5,

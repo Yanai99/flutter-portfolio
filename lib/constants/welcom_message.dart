@@ -1,0 +1,1 @@
+const welcomeMessage = "Hello! I'm Yanai Faran\n, an aspiring software developer with a relentless drive to learn, grow, and tackle new challenges head-on.\n My portfolio showcases the projects and initiatives I've pursued in my journey to master the art of software development.";
