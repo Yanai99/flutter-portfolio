@@ -1,1 +1,1 @@
-const welcomeMessage = "Hello! I'm Yanai Faran\n, an aspiring software developer";
+const welcomeMessage = "Hello! I'm Yanai Faran,\nan aspiring software developer";
