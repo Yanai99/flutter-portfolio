@@ -15,7 +15,7 @@ class MainMobile extends StatelessWidget {
                 margin:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                 height: screenHeight,
-                constraints: BoxConstraints(maxHeight: 560,),
+                constraints: const BoxConstraints(maxHeight: 450,),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,14 +36,13 @@ class MainMobile extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: CustomColor.whitePrimary),
                     ),
+                    const SizedBox(height: 20,),
                     //btn
                     SizedBox(
                       width: 180,
                       child: ElevatedButton(onPressed: (){}, 
                       child: const Text("Get in touch"),),
-                      )
-                      
-                      
+                      )             
                   ],
                 ),
               );
