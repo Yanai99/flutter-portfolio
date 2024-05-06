@@ -21,7 +21,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     image: 'assets/projects/1.png',
     title: 'StudyBox',
     subtitle:
-        'This is a comprehensive English learning app for practicing and competing with each other.',
+        'With the power of arduino and arts & crafts, I created a box that locks your phone while you study.',
     githubLink:
         'https://github.com/Yanai99/studyBox',
   ),
@@ -29,9 +29,9 @@ List<ProjectUtils> hobbyProjectUtils = [
     image: 'assets/projects/02.png',
     title: 'html Gallery',
     subtitle:
-        'This is a dictionary application for English learners to easily look up word definitions.',
+        'I created a gallery for my drawings using pure html and css.',
     githubLink:
-        'https://play.google.com/store/apps/details?id=com.shohatech.eduza_eng_dictionary',
+        'https://github.com/Yanai99/Yanai-Gallery-V1?tab=readme-ov-file',
     webLink: 
         'https://yanai99.github.io/Yanai-Gallery-V1/',
   ),
@@ -39,35 +39,9 @@ List<ProjectUtils> hobbyProjectUtils = [
       image: 'assets/projects/03.png',
       title: 'AP Optimal - work in progress',
       subtitle:
-          'This is a word memorising app to save and play your own words as quizes',
+          'An alogotirthm to determine the optimal number and location of wifi router in a home',
       githubLink:
           'https://play.google.com/store/apps/details?id=com.shohruhak.eng_pocket_dictionary',
   ),
 ];
 
-// ###############
-// WORK PROJECTS
-List<ProjectUtils> workProjectUtils = [
-  ProjectUtils(
-    image: 'assets/projects/w01.png',
-    title: 'English Brain Craft',
-    subtitle:
-        'This is an English learning app for students to learn English through various methods.',
-    githubLink:
-        'https://play.google.com/store/apps/details?id=kr.co.evolcano.donotstudy',
-  ),
-  ProjectUtils(
-    image: 'assets/projects/w02.png',
-    title: 'Online Shop Web App',
-    subtitle:
-        'This is a responsive online shop web application for car engine oil.',
-    webLink: 'https://www.elo.best',
-  ),
-  ProjectUtils(
-    image: 'assets/projects/w03.jpeg',
-    title: 'Advertisement Management System',
-    subtitle:
-        'This is an Advertisement Management System to buy, sell, and manage advertisement.',
-    webLink: 'https://www.externally.unavailable.project',
-  ),
-];
