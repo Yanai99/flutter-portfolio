@@ -4,7 +4,11 @@ import '../constants/colors.dart';
 import '../constants/welcom_message.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({
+    super.key,
+    required this.onGetInTouchTap,
+  });
+  final Function(int) onGetInTouchTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,19 @@ class MainDesktop extends StatelessWidget {
               //contact btn
               SizedBox(
                 width: 250,
-                child: ElevatedButton(onPressed: (){}, 
+                child: ElevatedButton(onPressed: (){
+                  onGetInTouchTap(3);
+                },
+                style: ElevatedButton.styleFrom(
+                backgroundColor: CustomColor.yellowPrimary,
+                foregroundColor: CustomColor.whitePrimary,
+                padding: const EdgeInsets.symmetric(
+                horizontal: 40, vertical: 25), // Adjust size with padding
+                textStyle: const TextStyle(
+                fontSize: 18, // Set font size
+                fontWeight: FontWeight.bold, // Set font weight
+                    ),
+                  ), 
                 child: const Text("Get in touch"),)
                 )
           ],

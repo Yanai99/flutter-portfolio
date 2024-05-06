@@ -1,19 +1,19 @@
 const List<Map> platformItems = [
   {
-    "img": "assets/android_icon.png",
-    "title": "Android Dev",
+    "img": "assets/tools.png",
+    "title": "Hard Worker",
   },
   {
-    "img": "assets/web_icon.png",
-    "title": "Web Dev",
+    "img": "assets/together.png",
+    "title": "Team Player",
   },
   {
-    "img": "assets/ios_icon.png",
-    "title": "IOS Dev",
+    "img": "assets/light_bulb.png",
+    "title": "Fast Learner",
   },
   {
-    "img": "assets/desktop_icon.png",
-    "title": "Desktop Dev",
+    "img": "assets/thumbs_up.png",
+    "title": "Initiative taker",
   }
 ];
 
@@ -39,12 +39,12 @@ const List<Map> skillItems = [
     "title": "JS",
   },
   {
-    "img": "assets/hugo.png",
-    "title": "Hugo",
+    "img": "assets/C.png",
+    "title": "C",
   },
   {
-    "img": "assets/docker.png",
-    "title": "Docker",
+    "img": "assets/C++.png",
+    "title": "C++",
   },
   {
     "img": "assets/python.png",

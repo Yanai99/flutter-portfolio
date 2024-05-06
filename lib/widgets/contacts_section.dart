@@ -24,13 +24,56 @@ class ContactsSection extends StatelessWidget {
             "Get in Touch",
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 28,
               color: CustomColor.whitePrimary,
             ),
           ),
            const SizedBox(
-             height: 50,
+             height: 40,
            ),
+           const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+             children:[
+              Icon(
+                Icons.phone,
+                color: CustomColor.whitePrimary,
+                size: 24.0,
+                semanticLabel: 'Text to announce in accessibility modes',
+              ), 
+              Text(
+              "  054-268-1867",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+                color: CustomColor.whitePrimary,
+              ),
+                       )],
+           ),
+          const SizedBox(
+            height: 50,
+          ),
+           const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.email,
+                color: CustomColor.whitePrimary,
+                size: 24.0,
+                semanticLabel: 'Text to announce in accessibility modes',
+              ),
+              Text(
+                "  YanaiParan@gmail.com",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: CustomColor.whitePrimary,
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
            ConstrainedBox(
              constraints: const BoxConstraints(
                maxWidth: 700,
@@ -41,7 +84,6 @@ class ContactsSection extends StatelessWidget {
 
           // TODO:
           // 1. add email and phone number
-          // 2. fix row to fit screen
           // 3. fix images in deployed webapp
           Wrap(
             spacing: 12,
