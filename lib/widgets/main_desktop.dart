@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import '../constants/welcom_message.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -22,7 +23,7 @@ class MainDesktop extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-              const Text("Hi,\nI'm Yanai Faran\nI aspire to be a SoftWare Developer",
+              const Text(welcomeMessage,
                     style: TextStyle(fontSize: 30,
                     height: 1.5,
                     fontWeight: FontWeight.bold,color: CustomColor.whitePrimary) ,),
