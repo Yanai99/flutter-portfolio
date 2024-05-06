@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/sns_link.dart';
+import 'package:flutter_application_1/pages/coming_soon.dart';
 import 'package:flutter_application_1/widgets/contacts_section.dart';
 import 'package:flutter_application_1/widgets/footer.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
@@ -57,7 +58,8 @@ class _HomePageState extends State<HomePage> {
                   HeaderDesktop(
                     onNavMenuTap: (int navIndex){
                     scrollToSection(navIndex);
-                  },) 
+                  },
+                  ) 
                 else
                 HeaderMobile(
                   onLogoTap: (){},
@@ -131,8 +133,10 @@ class _HomePageState extends State<HomePage> {
   void scrollToSection(int navIndex){
     if(navIndex == 4){
       // open a blog page
-      js.context.callMethod('open',[SnsLinks.blog]);
-      return;
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ComingSoon()),
+      );
     }
 
     final key = navbarKeys[navIndex];
