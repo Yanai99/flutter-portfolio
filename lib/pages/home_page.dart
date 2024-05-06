@@ -54,7 +54,8 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(key:navbarKeys.first),
                 // Main
                 if(constraints.maxWidth >= kMinDesktopWidth)
-                  HeaderDesktop(onNavMenuTap: (int navIndex){
+                  HeaderDesktop(
+                    onNavMenuTap: (int navIndex){
                     scrollToSection(navIndex);
                   },) 
                 else
@@ -66,9 +67,17 @@ class _HomePageState extends State<HomePage> {
                 ),
             
                 if (constraints.maxWidth >= kMinDesktopWidth) 
-                  const MainDesktop() 
+                  MainDesktop(
+                    onGetInTouchTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  ) 
                 else
-                  const MainMobile(),
+                  MainMobile(
+                    onGetInTouchTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  ),
                 
                 
                  // Skills

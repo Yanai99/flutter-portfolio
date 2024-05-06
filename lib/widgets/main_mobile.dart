@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/welcom_message.dart';
-
 import '../constants/colors.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  const MainMobile({
+    super.key,
+    required this.onGetInTouchTap,
+  });
+  final Function(int) onGetInTouchTap;
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +44,24 @@ class MainMobile extends StatelessWidget {
                     //btn
                     SizedBox(
                       width: 180,
-                      child: ElevatedButton(onPressed: (){}, 
-                      child: const Text("Get in touch"),),
+                      child: 
+                      ElevatedButton(
+                        onPressed: (){
+                onGetInTouchTap(3);
+              },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: CustomColor.yellowPrimary,
+                          foregroundColor: CustomColor.whitePrimary,
+                          padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 25), // Adjust size with padding
+                          textStyle: const TextStyle(
+                          fontSize: 18, // Set font size
+                          fontWeight: FontWeight.bold, // Set font weight
+                              ),
+                            ),
+                             
+                        child: const Text("Get in touch"),
+                        ),
                       )             
                   ],
                 ),
