@@ -4,6 +4,7 @@ class ProjectUtils {
   final String subtitle;
   final String? githubLink;
   final String? webLink;
+  final String? youtubeLink;
 
   ProjectUtils({
     required this.image,
@@ -11,6 +12,7 @@ class ProjectUtils {
     required this.subtitle,
     this.githubLink,
     this.webLink,
+    this.youtubeLink,
   });
 }
 
@@ -24,6 +26,8 @@ List<ProjectUtils> hobbyProjectUtils = [
         'With the power of arduino and arts & crafts, I created a box that locks your phone while you study.',
     githubLink:
         'https://github.com/Yanai99/studyBox',
+    youtubeLink:
+        'https://www.youtube.com/watch?v=GkbGGOS60vw&ab_channel=YanaiFaran',
   ),
   ProjectUtils(
     image: 'assets/projects/02.png',

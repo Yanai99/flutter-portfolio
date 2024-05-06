@@ -87,6 +87,19 @@ class ProjectCardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (project.youtubeLink != null)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 6),
+                    child: InkWell(
+                      onTap: () {
+                        js.context.callMethod("open", [project.youtubeLink]);
+                      },
+                      child: Image.asset(
+                        "assets/youtube.png",
+                        width: 17,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
