@@ -45,7 +45,7 @@ List<ProjectUtils> hobbyProjectUtils = [
       subtitle:
           'An alogotirthm to determine the optimal number and location of wifi router in a home',
       githubLink:
-          'https://play.google.com/store/apps/details?id=com.shohruhak.eng_pocket_dictionary',
+          'https://github.com/liongol/OptiAP/tree/main/Server%20FIles',
   ),
 ];
 
