@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "flutter-portfolio-a34b6"
-  }
+  },
+  "targets": {
+    "flutter-portfolio-a34b6": {
+      "hosting": {
+        "flutter-portfolio-a34b6": [
+          "flutter-portfolio-a34b6"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

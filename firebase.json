@@ -1,4 +1,5 @@
 {
+  "target": "flutter-portfolio-a34b6",
   "hosting": {
     "public": "build/web",
     "ignore": [
