@@ -26,7 +26,7 @@ jobs:
       - name: Deploy Firebase Hosting
         uses: w9jds/firebase-action@v13.7.5
         with:
-          args: deploy --only hosting:flutter-portfolio-a34b6
+          args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_PATH: ./
