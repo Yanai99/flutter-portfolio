@@ -41,11 +41,13 @@ List<ProjectUtils> hobbyProjectUtils = [
   ),
   ProjectUtils(
       image: 'assets/projects/03.png',
-      title: 'AP Optimal - work in progress',
+      title: 'AP Optimal - 1st Place Winner, College Project Contest',
       subtitle:
           'An alogotirthm to determine the optimal number and location of wifi router in a home',
       githubLink:
           'https://play.google.com/store/apps/details?id=com.shohruhak.eng_pocket_dictionary',
+      youtubeLink:
+          'https://www.youtube.com/watch?v=zVYl4zMxhWw&ab_channel=ByteBender',
   ),
 ];
 
